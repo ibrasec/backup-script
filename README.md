@@ -96,7 +96,7 @@ To add a schedual; type:
 
 Now you need to add the schedualed date/time that you want, as example to run this script every 6 hours you add the below line
 
-    * */6 * * * /home/\<usernname>/\<script-directory>
+    * */6 * * * /home/<usernname>/<script-directory>
 
 #
 i hope every thing is clear now
