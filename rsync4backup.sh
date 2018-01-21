@@ -46,7 +46,7 @@ else
 fi
 
 #----------------------------------------------------
-## backup to usb or external Hard Disk
+## backup to usb or to external Hard Disk
 if mount | grep  $usb_mount_directory > /dev/null 
 then
 
@@ -55,11 +55,11 @@ then
   then
     logger -s "rsync4backup USB/HDD-OK: rsycn local Copy to $usb_mount_directory has been successfully Done"
   else
-    logger -s "rsync4backup USB/HDD-ERROR:Error while running rsync to USB using rsync_script.sh"
+    logger -s "rsync4backup USB/HDD-ERROR:Error while running rsync to USB/HDD using rsync_script.sh"
   fi
   
 else
-  logger "rsync4backup USB/HDD-ERROR:couldnt copy to an external USB drive, check if the device is mounted"
+  logger "rsync4backup USB/HDD-ERROR:couldnt copy to an external USB/HDD drive, check if the device is mounted or its filesystem is not FAT32"
 fi
 
 #----------------------------------------------------
