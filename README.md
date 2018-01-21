@@ -29,11 +29,11 @@ the script doesn't create a backup_folder by default
 
 example:
 
-user@main-server\$ ssh-keygen 
+    user@main-server\$ ssh-keygen 
 
-\<Just type Enter Enter Enter>
+    \<Just type Enter Enter Enter>
 
-user@main-server\$ ssh-copy-id \<username>\@\<remote-ip-address>
+    user@main-server\$ ssh-copy-id \<username>\@\<remote-ip-address>
 
 ### How to run the Code
 Please change the below values to match your criteria and update the script accordingly, 
