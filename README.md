@@ -41,23 +41,23 @@ as example, if you are willing to backup your file (ex: site1.local) to a remote
 
 - comment on the lines that you are not interrested in for your backup procedure
 
-site_name='site1.local'
+    site_name='site1.local'
 
-local_destination=~/backup_folder
+    local_destination=~/backup_folder
 
-usb_mount_directory=/media/USB
+    usb_mount_directory=/media/USB
 
-remote_username='ibrahim'
+    remote_username='ibrahim'
 
-remote_address='192.168.1.123'
+    remote_address='192.168.1.123'
 
-remote_directory='~/'
+    remote_directory='~/'
 
 - Make sure that you type the command "chmod a+x rsync4backup.sh" for the script to be executable.
 
 - To execute the script, go to the directory that has this script and type the below:
 
-sh rsync4script.sh 
+    sh rsync4script.sh 
 
 
 #### Where logs are stored
@@ -65,38 +65,38 @@ In case the script ran successfully or had some errors, you will find logs store
 
 - in case of a successful backup to a local folder the log starts with:
 
-rsync4backup LOCAL-OK:
+    rsync4backup LOCAL-OK:
 
 - in case of a successful backup to a Remote Server the log starts with:
 
-rsync4backup REMOTE-OK:
+    rsync4backup REMOTE-OK:
 
 - in case of a successful backup to a USB or to HDD the log starts with:
 
-rsync4backup USB-HDD-OK:
+    rsync4backup USB-HDD-OK:
 
 - in case of an Error when backup to a local folder the log starts with:
 
-rsync4backup LOCAL-ERROR:
+    rsync4backup LOCAL-ERROR:
 
 - in case of an Error when backup to a USB or to HDD  the log starts with:
 
-rsync4backup USB-HDD-ERROR:
+    rsync4backup USB-HDD-ERROR:
 
 - in case of an Error when backup to a Remote Server the log starts with:
 
-rsync4backup REMOTE-ERROR:
+    rsync4backup REMOTE-ERROR:
 #
 ### How to schedual the script
 To make this code running on a schedulled data or time, you need to have crontab installed.
 
 To add a schedual; type:
 
-crontab -e
+    crontab -e
 
 Now you need to add the schedualed date/time that you want, as example to run this script every 6 hours you add the below line
 
- \* */6 * * * /home/\<usernname>/\<script-directory>
+    \* */6 * * * /home/\<usernname>/\<script-directory>
 
 #
 i hope every thing is clear now
