@@ -1,4 +1,4 @@
-# frappe-bench-backup-script
+# backup-script
 This is a simple Bash script used to copy files or directories to different locations, it was mainly used to backup frappe-bench site or sites into mutliple optional locations, but it could also be used for any different applications
 
 rsync4backup script can be used to copy/transfere files to the following:
