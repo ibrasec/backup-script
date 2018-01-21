@@ -21,18 +21,19 @@ the script doesn't create a backup_folder by default
 - make sure to have your USB/HDD mounted to /media/ directory
 #
 ### Before you backup to a Remote Server
-- make sure to have your remote server reachable and the TCP port 873 is open, the script will log REMOTE-ERROR to the /var/log/syslog if the server or the TCP port is unreachable.
+- make sure to have your remote server reachable and the TCP port 873 state is OPEN or LISTENING, the script will log REMOTE-ERROR to the /var/log/syslog if the server or the TCP port is unreachable.
 
 - check your firewall setting if you couldn't reach port 873 from your main server.
 
-- for automation purpose it is better to have your main server able to ssh the backup server without requiring the password, you could achieve this feature by using ssh-keygen and ssh-copy-id 
+- for automation purpose it is better to have your main server able to ssh the backup server without requiring the password, you could achieve this feature by using ssh-keygen and ssh-copy-id on the main server
 
 example:
 
-\$ssh-keygen 
+user@main-server\$ssh-keygen 
+
 \<Just type Enter Enter Enter>
 
-\$ssh-copy-id <username>@<remote-ip-address>
+user@main-server\$ssh-copy-id <username>@<remote-ip-address>
 
 ### How to run the Code
 Please change the below values to match your criteria and update the script accordingly, 
