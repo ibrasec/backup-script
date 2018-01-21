@@ -1,5 +1,7 @@
 # frappe-bench-backup-script
-This is a simple Bash script used to backup the frappe-bench site | sites into mutliple optional locations:
+This is a simple Bash script used to copy files or directories to different locations, it was mainly used to backup frappe-bench site or sites into mutliple optional locations, but it could also be used for any different applications
+
+rsync4backup script can be used to copy/transfere files to the following:
 
     1 - To a local folder
   
@@ -7,7 +9,32 @@ This is a simple Bash script used to backup the frappe-bench site | sites into m
 
     3 - To a remote server
 
-The script uses rsync command to do its process.
+rsync4backup uses rsync to do its process.
+
+# copying to a local folder
+- make sure to have your local folder created before you run the script,
+the script doesn't create a backup_folder by default
+
+## copying to USB or to HDD
+- make sure that the filesystem of the attached USB/HDD is not FAT32, otherwise you will face an Error message because of permissino issues
+
+- make sure to have your USB/HDD mounted to /media/ directory
+
+### copying to Remote Server
+- make sure to have your remote server reachable and the TCP port 873 is open, the script will log REMOTE-ERROR to the /var/log/syslog if the server or the TCP port is unreachable.
+
+- check your firewall setting if you couldn't reach port 873 from your main server.
+
+- for automation purpose it is better to have your main server able to ssh the backup server without requiring the password, you could achieve this feature by using ssh-keygen and ssh-copy-id 
+
+example:
+
+\$ssh-keygen 
+\<Just type Enter Enter Enter>
+
+\$ssh-copy-id <username>@<remote-ip-address>
+
+#
 
 Please change the below values to match your criteria and update the script accordingly, 
 as example, if you are willing to backup your file (ex: site1.local) to a remote server that has an ip address of 10.1.2.3, then change the remote_address to be remote_address='10.1.2.3' and so on.
@@ -59,6 +86,9 @@ crontab -e
 Now you need to add the schedualed date/time that you want, as example to run this script every 6 hours you add the below line
 
  \* */6 * * * /home/\<usernname>/\<script-directory>
+
+
+i hope every thing is clear now
 
 Enjoy your backup!
 
