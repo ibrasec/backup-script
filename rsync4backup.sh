@@ -1,6 +1,3 @@
-... Stil under construction ...
-
-
 #/bin/bash
 ## a simple bash script for copying a certain directory to a local folder, usb and or to a remote server
 ## this was mainly used to backup the directory of the frappe-bench sites.
