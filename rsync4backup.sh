@@ -11,7 +11,7 @@
 site_name='site1.local'
 
 ## The folder in which we take backups from
-source_directory='~/frappe-bench/sites/$site_name'
+source_directory=~/frappe-bench/sites/$site_name
 
 ## for backup to a local folder ---
 ## Where to save local backup, Note: this folder must already had been created using mkdir command
@@ -45,7 +45,7 @@ then
   fi
   
 else
-  looger -s "rsync_script LOCAL-ERROR: The $local_destination doesn't exist, please use mkdir"
+  logger -s "rsync_script LOCAL-ERROR: The $local_destination doesn't exist, please use mkdir"
 fi
 
 #----------------------------------------------------
