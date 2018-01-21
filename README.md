@@ -29,15 +29,15 @@ the script doesn't create a backup_folder by default
 
 example:
 
-user@main-server\$ssh-keygen 
+user@main-server\$ ssh-keygen 
 
 \<Just type Enter Enter Enter>
 
-user@main-server\$ssh-copy-id \<username>\@\<remote-ip-address>
+user@main-server\$ ssh-copy-id \<username>\@\<remote-ip-address>
 
 ### How to run the Code
 Please change the below values to match your criteria and update the script accordingly, 
-as example, if you are willing to backup your file (ex: site1.local) to a remote server that has an ip address of 10.1.2.3, then change the remote_address to be remote_address='10.1.2.3' and so on.
+as example, if you are willing to backup your file (ex: site1.local) to a remote server that has an ip address of 10.1.2.3, then change the remote_address to be remote_address='10.1.2.3', Please dont leave a space between the varaible and the value like this remote_address = '10.1.1.1' otherwise the script will not run as supposed to .
 
 - comment on the lines that you are not interrested in for your backup procedure
 
