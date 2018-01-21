@@ -36,13 +36,13 @@ then
 
   if [ "$?" -eq "0" ]
   then
-    logger -s "rsync_script LOCAL-OK:rsycn local Copy to $local_destination has been successfully Done"
+    logger -s "rsync4backup LOCAL-OK:rsycn local Copy to $local_destination has been successfully Done"
   else
-    logger -s "rsync_script LOCAL-ERROR:Error while running rsync to LOCAL using rsync_script.sh"
+    logger -s "rsync4backup LOCAL-ERROR:Error while running rsync to LOCAL using rsync_script.sh"
   fi
   
 else
-  logger -s "rsync_script LOCAL-ERROR: The $local_destination doesn't exist, please use mkdir"
+  logger -s "rsync4backup LOCAL-ERROR: The $local_destination doesn't exist, please use mkdir"
 fi
 
 #----------------------------------------------------
@@ -53,13 +53,13 @@ then
   rsync -rav $source_directory $usb_mount_directory
   if [ "$?" -eq "0" ]
   then
-    logger -s "rsync_script USB/HDD-OK: rsycn local Copy to $usb_mount_directory has been successfully Done"
+    logger -s "rsync4backup USB/HDD-OK: rsycn local Copy to $usb_mount_directory has been successfully Done"
   else
-    logger -s "rsync_script USB/HDD-ERROR:Error while running rsync to USB using rsync_script.sh"
+    logger -s "rsync4backup USB/HDD-ERROR:Error while running rsync to USB using rsync_script.sh"
   fi
   
 else
-  logger "rsync_script USB/HDD-ERROR:couldnt copy to an external USB drive, check if the device is mounted"
+  logger "rsync4backup USB/HDD-ERROR:couldnt copy to an external USB drive, check if the device is mounted"
 fi
 
 #----------------------------------------------------
@@ -71,10 +71,10 @@ if nc -w 2 $remote_address 873 >/dev/null; then
 
         if [ "$?" -eq "0" ]
         then
-                logger -s "rsync_script REMOT-OK: rsycn remote Copy to $remote_destination has been successfully Done"
+                logger -s "rsync4backup REMOTE-OK: rsycn remote Copy to $remote_destination has been successfully Done"
         else
-                logger -s "rsync_script REMOT-ERROR: Error while running rsync to REMOTE using rsync_script.sh"
+                logger -s "rsync4backup REMOTE-ERROR: Error while running rsync to REMOTE using rsync_script.sh"
         fi
 else
-        logger -s "rsync_script REMOT-Unreachable: TCP service port 873 on the remote server is unreachable"
+        logger -s "rsync4backup REMOTE-Unreachable: TCP service port 873 on the remote server is unreachable"
 fi
